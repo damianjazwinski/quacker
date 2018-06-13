@@ -1,0 +1,58 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block navbar %}
+	{% include 'navbar.html' %}
+{% endblock %}
+
+{% block other_styles %}
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script>
+		var validated = function() {
+			$('#register-button').removeAttr('disabled');
+			$('#{{ form.captcha.auto_id }}').val(grecaptcha.getResponse());
+		};
+
+		var unvalidated = function() {
+			$('#register-button').attr('disabled', 'disabled');
+			$('#{{ form.captcha.auto_id }}').val('');
+		};
+	</script>
+	{% if success %}
+		<meta http-equiv="refresh" content="3; url=/login" />
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="col-4 offset-4 radius-card" style="margin-top: 40px;">
+	{% load widget_tweaks %}
+
+	<h2>Register new account</h2>
+	<br>
+	<form method="post" action="{% url 'register' %}">{% csrf_token %}
+		{% if form.errors %}
+			{% for field in form %}
+				{% for error in field.errors %}
+					<div class="alert alert-danger">
+						{{ error }}
+					</div>
+				{% endfor %}
+			{% endfor %}
+		{% endif %}
+	    <div class="form-group">
+	    	{% for field in form %}
+	    		{{ field.label }}
+	            <div{% if field.errors %} class="has-danger"{% endif %} placeholder="{{ field.label }}">{{ field|add_class:"form-control" }}</div>
+          	{% endfor %}
+			<div class="text-center">
+				<div class="g-recaptcha" data-callback="validated" data-expired-callback="unvalidated" data-sitekey="6LevAlkUAAAAAKBmcFbb055OLEgocmM297BzDoPx"></div>
+			</div>
+	    </div>
+
+	    <div class="form-group">
+	        <input type="submit" id="register-button" disabled class="btn btn-primary form-control" value="Register" />
+	    </div>
+	</form>
+</div>
+{% endblock %}

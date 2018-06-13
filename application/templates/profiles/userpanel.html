@@ -1,0 +1,70 @@
+{% extends 'base_template.html' %}
+
+{% block title %}User panel{% endblock %}
+
+{% block navbar %}
+	{% include 'navbar.html' %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	<div class="row profile-area">
+		<div style="width: 240px;">
+			<div class="card">
+				<div class="card-block">
+					<p><i>Preview</i></p>
+					<img id="img-src" src="{% if myprofile.image_link %}{{ myprofile.image_link }}{% else %}/static/no_avatar.jpg{% endif %}" width="200" height="200">
+					<br><br>
+					<h3>@{{ profile.username }}</h3><br>
+					{% if myprofile.description %}
+						<p id="user-desc">{{ myprofile.description }}</p>
+					{% endif %}
+					<h4>Quacks <span class="badge badge-pill badge-default">{{ quacks }}</span></h4>
+					<h4>Following <span class="badge badge-pill badge-default">{{ following }}</span></h4>
+					<h4>Followers <span class="badge badge-pill badge-default">{{ followers }}</span></h4>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card">
+				<div class="card-block">
+					<form method="post" action="{% url 'userpanel' %}">{% csrf_token %}
+						<div class="form-group">
+					        {{ form.image_link }}
+					        {{ form.description }}
+					    </div>
+
+					    <div class="form-group">
+					        <button type="submit" class="btn btn-primary col">Save</button>
+					        <a href="/profile/{{ user.username }}" class="btn btn-danger col">Cancel</a>
+					    </div>
+				    </form>
+			    </div>
+		    </div>
+	    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	$( "input[name='image_link']" ).on('input propertychange', function() {
+		var x = this.value.length;
+		var def = '{% if myprofile.image_link %}{{ myprofile.image_link }}{% else %}/static/no_avatar.jpg{% endif %}';
+		if(x == 0) {
+			$('#img-src').attr("src", def);
+		} else {
+			$('#img-src').attr("src", this.value);
+		}
+	});
+	$( "textarea[name='description']" ).on('input propertychange', function() {
+		var x = this.value.length;
+		var def = "{% if myprofile.description %}{{ myprofile.description }}{% endif %}";
+		if(x == 0) {
+			$('#user-desc').text(def);
+		} else {
+			$('#user-desc').text(this.value);
+		}
+	});
+</script>
+{% endblock %}

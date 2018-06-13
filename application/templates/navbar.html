@@ -1,0 +1,41 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+	<div class="container">
+		<a class="navbar-brand" href="/"><img src="/static/icon.png" style="border-radius: 50%;"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<input id="nav-search" class="form-control" type="text" placeholder="Search user">
+				</li>
+				<li class="nav-item">
+					<button class="btn btn-outline-success" onclick="search('#nav-search')">Search</button>
+				</li>
+			</ul>
+			<ul class="navbar-nav navbar-right">
+				{% if user.is_authenticated %}
+					<li class="nav-item">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#quack">Quack!</button>
+						{% include 'new_quack.html' %}
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Hi, {{ user.username }}!
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="/profile/{{ user.username }}">My profile</a>
+							<a class="dropdown-item" href="/userpanel">Edit profile</a>
+							<a class="dropdown-item" href="/follows">My follows</a>
+							<a class="dropdown-item" href="/logout">Logout</a>
+						</div>
+					</li>
+				{% else %}
+					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+					<li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+</nav><!---->

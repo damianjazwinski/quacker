@@ -1,0 +1,107 @@
+{% extends 'base_template.html' %}
+
+{% block title %}My follows{% endblock %}
+
+{% block navbar %}
+	{% include 'navbar.html' %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	{% if profile is None %}
+		<div class="offset-3 col-6 radius-card" style="margin-top: 100px;">
+			<br>
+			<h1 style="font-size: 60px;">Profile not found</h1>
+			<br><br>
+			<div class="offset-2 col-8">
+				<input id="search-username" type="text" class="form-control" placeholder="Enter username">
+				<button onclick="search('#search-username')" class="btn btn-primary btn-block">Search</button>
+			</div>
+		</div>
+	{% else %}
+		<div class="row profile-area">
+			<div style="width: 240px;">
+				<div class="card">
+					<div class="card-block">
+						<img src="{% if myprofile.image_link %}{{ myprofile.image_link }}{% else %}/static/no_avatar.jpg{% endif %}" width="200" height="200">
+						<br><br>
+						<h3>@{{ profile.username }}</h3><br>
+						{% if myprofile.description %}
+							<p id="user-desc">{{ myprofile.description }}</p>
+						{% endif %}
+						<h4>Quacks <span class="badge badge-pill badge-default">{{ quacks }}</span></h4>
+						<h4>Following <span class="badge badge-pill badge-default">{{ following }}</span></h4>
+						<h4>Followers <span class="badge badge-pill badge-default">{{ followers }}</span></h4>
+						{% if user.is_authenticated and profile.pk is not user.pk %}
+						<form method="post">{% csrf_token %}
+						{% if is_following %}
+							<button class="btn btn-block btn-primary" type="submit">Stop following</button>
+						{% else %}
+							<button class="btn btn-block btn-outline-primary" type="submit">Follow</button>
+						{% endif %}
+						</form>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class=" col-4">
+				<div class="card">
+					<div class="card-block">
+						<div class="card-title"><h3 align="center">Followed</h3></div><hr>
+						{% if followed_imgs %}
+							{% for item in followed_imgs %}
+								<div>
+									<a href="/profile/{{ item.profile.followed.username }}">
+										<img src="{% if item.link %}{{ item.link }}{% else %}/static/no_avatar.jpg{% endif %}" width="50" height="50">
+									</a>
+									<a href="/profile/{{ item.profile.followed.username }}">@{{ item.profile.followed.username }}</a>
+									<form action="{% url 'follows' %}" method="post" class="float-right">{% csrf_token %}
+										<input type="hidden" name="id" value="{{ item.profile.pk }}">
+										<button id="f{{ item.profile.pk }}" class="btn btn-primary" onmouseover="hover('f{{ item.profile.pk }}')" onmouseleave="lost_hover('f{{ item.profile.pk }}')">Followed</button>
+									</form>
+								</div><br>
+							{% endfor %}
+						{% else %}
+							<h5 align="center">No followers</h5>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="offset-1 col-4">
+				<div class="card">
+					<div class="card-block">
+						<div class="card-title"><h3 align="center">Followers</h3></div><hr>
+						{% if follower_imgs %}
+							{% for item in follower_imgs %}
+								<div>
+									<a href="/profile/{{ item.profile.follower.username }}">
+										<img src="{% if item.link %}{{ item.link }}{% else %}/static/no_avatar.jpg{% endif %}" width="50" height="50">
+									</a>
+									<a href="/profile/{{ item.profile.follower.username }}">@{{ item.profile.follower.username }}</a>
+								</div><br>
+							{% endfor %}
+						{% else %}
+							<h5 align="center">No followers</h5>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	function hover(id) {
+		$('#' + id).removeClass();
+		$('#' + id).addClass('btn btn-danger')
+		$('#' + id).text('Stop following')
+	}
+	function lost_hover(id) {
+		$('#' + id).removeClass();
+		$('#' + id).addClass('btn btn-primary')
+		$('#' + id).text('Followed')
+	}
+</script>
+{% endblock %}

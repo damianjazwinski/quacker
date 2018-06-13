@@ -1,0 +1,66 @@
+{% block navbar %}
+	{% include 'navbar.html' %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	{% if quacks is None %}
+		<div class="offset-3 col-6 radius-card" style="margin-top: 100px;">
+			<br>
+			<h1 style="font-size: 60px;">Nothing to show</h1>
+			<br>
+		</div>
+	{% else %}
+		<div class="row profile-area">
+			<div style="width: 240px;">
+				<div class="card">
+					<div class="card-block">
+						<img id="img-src" src="{% if myprofile.image_link %}{{ myprofile.image_link }}{% else %}/static/no_avatar.jpg{% endif %}" width="200" height="200">
+						<br><br>
+						<h3>@{{ user.username }}</h3><br>
+						<a href="/profile/{{ user.username }}" class="btn btn-outline-success btn-block">My profile</a><br>
+						<a href="/userpanel" class="btn btn-outline-primary btn-block">Edit profile</a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				{% if quacks %}
+					{% for quack in quacks %}
+						<div class="offset-1 col-11 quack">
+							<p><b><a href="/profile/{{ quack.quacker.username }}">@{{ quack.quacker.username }}</a></b> &#8226; <span style="font-size: 13px;">{{ quack.created_at }}</span></p>
+							<p class="iterate">{{ quack.content }}</p>
+						</div><br>
+					{% endfor %}
+				{% else %}
+					<div class="offset-3 col-6 radius-card" style="margin-top: 100px;">
+						<br>
+						<h1 style="font-size: 60px;">Nothing to show</h1>
+						<br>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	{% endif %}
+</div>
+
+{% endblock %}
+
+{% block js %}
+	<script type="text/javascript">
+		/*$('.iterate').each(function() {
+			var content = $(this).text();
+			content = content.replace(new RegExp('\n', 'g'), ' ');
+
+			var result = content.split(" ").filter(function(item) {
+				return item.startsWith('@');
+			});
+
+			for(var i = 0; i < result.length; i++) {
+				var link = '<span><a href="/profile/' + result[i].substr(1) + '">' + result[i] + '</a></span>';
+				content = content.replace(new RegExp(result[i], 'g'), link);
+			}
+
+			$(this).html(content);
+		});*/
+	</script>
+{% endblock %}
