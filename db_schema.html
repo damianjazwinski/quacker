@@ -1,0 +1,1327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE html>
+<html lang='en-us' xmlns='http://www.w3.org/1999/xhtml' >
+<head>
+<title>quacker&#45;sdb</title>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" crossorigin="anonymous" />
+<link rel="shortcut icon" href="https://www.dbschema.com/images/favicon.ico">
+<style type='text/css'>
+body {
+    font-family: 'Segoe UI', 'Lucida sans', Dialog;
+    font-size: 13px;
+    background-color:#f5f5f5;
+    margin: 10px;
+}
+</style>
+</head>
+
+<body>
+<div class='svg-container'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'   width='1088' height='862' viewBox='0 0 1088 862' >
+  <script type='text/ecmascript'>
+  <![CDATA[
+  function hghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','highlight');  }  }
+  function uhghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','scene'); }  } 
+  ]]>
+  </script> 
+
+<style type='text/css'>
+  text                { fill:#000000; font-family: Candara, 'Trebuchet MS', Dialog; font-size:12px; }
+  a text:hover        { fill:#94025f; text-shadow: 0px 0px 6px #d0ce00; font-size:13px; }
+  text.highlight      { fill:#94025f; text-shadow: 0px 0px 4px #eac533; font-size:13px; }
+  text.colType        { fill:#b3b3b3; }
+  text.relName        { fill:#b09c7c; }
+  path                { stroke:#5c554f; stroke-width:1.15; fill:none; }
+  path                { stroke:#5c554f; stroke-width:1.15; fill:none;}
+  path.virtual        { stroke:#b7642d; }
+  path.logo           { fill:#fbeac0;fill-opacity:1;stroke-width:0.3;stroke:#222222; }
+  path.dotted         { stroke-dasharray:4,2; }
+  path.scene          { stroke-width:10; opacity:0;}
+  path.highlight      { stroke-width:5; stroke:#c1a662; opacity:0.6;}
+  rect.entity         { fill:#ffffff; stroke:#aaa; stroke-width:1;shape-rendering:crispEdges; }
+  line.delim          { stroke-width:1; shape-rendering:crispEdges; }
+  text.callout        { fill:#000000; font-family: Candara, 'Trebuchet MS', Dialog; font-size:12px; }
+  rect.callout        { fill:url(#calloutGradient); stroke:#bebdbd; stroke-width:0.5; }
+  rect.grp            { stroke:#b1b1b1; stroke-width:1.7; opacity:0.8; }
+  path.st0            { fill:#ececec;fill-opacity:1;stroke-width:0.6;stroke:#d0d0d0; }
+</style>
+<defs>
+  <pattern id='layoutBgA' patternUnits='userSpaceOnUse'  width='10' height='20' x='0' y='0' viewBox='0 0 5 10'>  
+     <line x1='-2' y1='1' x2='7' y2='10' stroke='#f3f3f3' stroke-width='.5'/>  
+     <line x1='-2' y1='6' x2='7' y2='15' stroke='#f3f3f3' stroke-width='.5'/>  
+     <line x1='-2' y1='-4' x2='7' y2='5' stroke='#f3f3f3' stroke-width='.5'/>  
+  </pattern>  
+  <radialGradient id='layoutBgB' gradientUnits='userSpaceOnUse' cx='50%' cy='50%' r='75%' fx='46%' fy='22%'>
+     <stop offset='0%' stop-opacity='.2' stop-color='#f5f5f5' />  
+     <stop offset='100%' stop-color='#efefef' />  
+  </radialGradient>
+  <pattern id='layoutBgTr' patternUnits='userSpaceOnUse'  width='300' height='300' x='0' y='0' viewBox='0 0 300 300'>  
+  <path class='st0' d='m 62.011835,91.267143 c 3.536475,3.175214 2.262669,8.705999 -1.637711,11.015197 -3.594697,5.8423 -6.34682,-2.892623 -9.715478,-4.653898 -5.609222,-2.838926 2.050802,-6.680123 4.77004,-8.319046 2.334696,-0.724067 4.935143,0.312302 6.583149,1.957747 z m -2.720492,2.538595 c -2.698397,-3.517732 -9.282815,1.269287 -3.69635,3.568637 2.765331,5.605665 7.052809,-0.56184 3.69635,-3.568637 z' />
+  <path class='st0' d='m 72.25864,84.624638 c 4.108046,3.143003 -0.737059,6.895259 -1.994918,8.323564 -3.586718,5.561143 -6.495079,-4.197379 -10.07759,-5.582178 -4.443422,-1.088878 1.349298,-7.249213 2.503526,-2.503449 2.464639,4.517161 2.304019,-3.70697 6.291113,-1.995914 1.280083,0.137865 2.410691,0.864819 3.277869,1.757977 z m -2.646109,2.323242 c -4.797162,-3.078383 -2.810517,6.305507 0.515161,1.990646 0.296432,-0.688582 0.01209,-1.493412 -0.515161,-1.990646 z' />
+  <path class='st0' d='m 78.230641,79.436735 c 4.142121,3.027466 -2.020102,10.435276 -3.450543,5.477315 3.306312,-5.248112 -9.186019,-2.220094 -5.805994,-8.77679 -0.544141,-3.93011 6.797826,-2.102227 3.386015,0.245477 -0.181085,2.915838 4.637371,1.019311 5.870522,3.053982 z' />
+  <path class='st0' d='m 82.744502,72.597397 c -4.901605,1.926521 1.146497,6.285555 2.559694,2.225783 6.21817,3.539297 -6.640186,8.416664 -7.590325,1.997457 -2.24365,-2.914883 4.026676,-10.148618 5.030631,-4.22324 z' />
+  <path class='st0' d='m 90.727458,64.259158 c 1.583987,1.690029 3.321317,3.2696 4.81267,5.026353 -2.535706,6.849794 -6.445583,-5.918773 -8.388458,-0.167017 0.782768,2.03426 5.877405,3.752079 2.670979,5.711199 -3.315119,1.519161 -5.782422,-5.157931 -8.858893,-6.780537 -4.229842,-1.139816 1.510134,-7.074128 2.586227,-2.385939 3.141198,5.495193 1.840537,-5.598295 7.177489,-1.404062 z' />
+  <path class='st0' d='m 99.622027,58.374253 c 1.493293,1.9548 -6.281936,7.024659 -0.885258,4.740447 0.386238,-4.434477 6.131941,-1.133173 2.175851,1.618005 -4.421491,6.12739 -13.666659,-3.151506 -7.058299,-7.136537 1.785129,-1.119329 4.348209,-0.743179 5.767706,0.778085 z m -2.900824,1.89746 c -3.608188,-2.208543 -2.280489,5.00803 -0.12563,0.329531 z' />
+  <path class='st0' d='m 115.18023,50.570441 c -1.61703,5.201678 -4.6204,-0.364502 -7.01598,-1.749619 -4.40977,2.122562 4.89641,4.913939 1.89606,7.018157 -2.48061,3.877635 -4.11404,-4.060614 -7.01192,-2.6391 -1.76318,3.107252 7.28394,6.252304 0.87346,7.876177 -1.74515,-2.956649 -9.055498,-5.610518 -3.950378,-8.66062 1.696478,1.897023 1.770418,-5.43503 5.347308,-3.072411 -0.44014,-5.474701 6.11995,-4.950882 7.7846,-0.815355 0.69076,0.682329 1.39587,1.351469 2.07685,2.042771 z' />
+  <path class='st0' d='m 120.54891,39.417125 c 2.50681,1.334124 4.80466,4.941837 0.75044,5.297362 -0.46414,1.89865 -5.25369,5.602652 -8.01742,1.815475 -3.87345,-2.809139 -0.0676,-7.603869 2.3036,-8.133924 1.6795,-3.853018 3.16703,-1.199465 4.96338,1.021087 z m -2.2464,2.175828 c -4.8049,-2.992167 -3.08987,6.380358 0.42374,2.036159 0.33052,-0.677508 0.12099,-1.525836 -0.42374,-2.036159 z' />
+  <path class='st0' d='m 128.50836,24.06821 c -5.10403,3.035506 3.20535,6.383175 5.05938,9.450276 -0.91853,2.95886 -4.06493,3.650723 -5.34691,0.265618 -2.25715,-2.089033 -4.65672,-6.948595 -7.07024,-2.584686 -4.71758,-3.764394 3.81217,-5.812054 5.12382,-9.226328 0.75738,0.677487 1.38637,1.498638 2.23389,2.095175 z' />
+  <path class='st0' d='m 137.14366,22.299812 c -3.09615,2.259885 0.71537,4.412454 1.99042,6.435866 -3.08975,5.080354 -5.91384,-2.98648 -8.92144,-4.094939 1.44369,-3.219573 3.3497,-1.335928 4.27156,-4.41058 0.97822,-0.894325 1.75044,1.871047 2.65946,2.069653 z' />
+  <path class='st0' d='m 136.85093,14.890174 c 2.31562,5.283511 -7.17975,1.771993 -1.29675,-0.475107 l 0.7108,0.08973 z m 4.867,5.317354 c 2.56912,1.439678 4.26517,4.725219 0.30678,5.233637 -1.56592,-3.098864 -9.51683,-5.749448 -3.64502,-8.633714 1.17746,0.325095 2.15375,2.591149 3.33824,3.400077 z' />
+  <path class='st0' d='m 149.95578,11.976423 c 2.50679,1.334142 4.80455,4.94192 0.75041,5.297394 -0.4641,1.898604 -5.25368,5.602645 -8.0174,1.81545 -3.87347,-2.80918 -0.0676,-7.603844 2.30366,-8.133968 1.67949,-3.8530525 3.16695,-1.1993573 4.96333,1.021124 z m -2.24641,2.175828 c -4.80489,-2.992177 -3.08986,6.380343 0.42374,2.036167 0.33055,-0.677518 0.121,-1.52585 -0.42374,-2.036167 z' />
+  <path class='st0' d='m 153.26135,7.538431 c 2.60497,1.5799548 6.03999,5.944272 1.08117,6.050232 -2.53319,-3.231828 -7.20316,-6.4304525 -8.84748,-9.4582682 1.89121,-2.8664883 3.78452,-2.247699 5.38514,0.8929426 0.78017,0.8503859 1.57195,1.6911437 2.38118,2.5150667 z' />
+  </pattern>  
+  <linearGradient id='groupUnderTitleLine' x1='0%' y1='0%' x2='100%' y2='0%' >
+          <stop offset='0%' stop-color='#999999' stop-opacity='0.7'/> 
+          <stop offset='100%' stop-color='#999999' stop-opacity='0' /> 
+   </linearGradient>
+  <radialGradient id='calloutGradient' cx='25%' cy='20%' r='80%' fx='10%' fy='10%'>
+	   <stop offset='0%' stop-color='#ffffff' />
+    <stop offset='100%' stop-color='#f8f6d1' />
+  </radialGradient>
+  <filter id='shadow' width='120%' height='120%'> 
+      <feOffset result='offOut' in='SourceGraphic' dx='1' dy='1' /> 
+      <feColorMatrix result='matrixOut' in='offOut' type='matrix' 
+      values='0.1 0 0 0 0 0 0.4 0 0 0 0 0 0.6 0 0 0 0 0 0.3 0' /> 
+      <feGaussianBlur result='blurOut' in='matrixOut' stdDeviation='3' /> 
+      <feBlend in='SourceGraphic' in2='blurOut' mode='normal' /> 
+    </filter> 
+  <filter id='fkShadow' height='130%'> 
+    <feGaussianBlur in='SourceAlpha' stdDeviation='1.5'/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx='1.2' dy='1.2' result='offsetblur'/> <!-- how much to offset -->
+    <feMerge>
+    <feMergeNode/> <!-- this contains the offset blurred image -->
+    <feMergeNode in='SourceGraphic'/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+  <radialGradient id='legendGradient' fx='5%' fy='5%' r='75%' spreadMethod='pad'>
+          <stop offset='0%' stop-color='#eefbf2' stop-opacity='1'/> 
+          <stop offset='100%' stop-color='#cff9cb' stop-opacity='1' /> 
+   </radialGradient>
+  <symbol id='calloutArrowDown' overflow='visible' >
+      <path d='M 0,0 L 8,12 L 16,0 z' style='fill:#f8f6d1;stroke:none; filter: url(#shadow);' />
+      <path d='M 0,0 L 8,12 L 16,0' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='calloutArrowUp' overflow='visible' >
+      <path d='M 0,16 L 8,4 L 16,16 z' style='fill:#ffffff; stroke:none; filter: url(#shadow);' />
+      <path d='M 0,16 L 8,4 L 16,16' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='pk' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <path style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;'
+        d='M 9.3678877,3.5695485 C 9.1030218,3.2729386 9.0796382,2.7628519 9.3396185,2.4517097 9.5449651,2.1956495 9.9040386,2.0980533 10.199638,2.2169415 10.533525,2.3415459 10.775153,2.706942 10.750675,3.0842709 10.737029,3.3980003 10.541153,3.699122 10.258248,3.8066067 9.966649,3.9250429 9.6169668,3.8418805 9.4008073,3.6062324 9.3894892,3.5943518 9.3785264,3.582104 9.3678886,3.5695487 z M 11.226617,6.9916004 C 11.888137,6.3548946 12.293488,5.4172188 12.311087,4.442353 12.378144,2.7379364 11.248678,1.0541269 9.7322318,0.44767357 8.3887112,-0.1280313 6.7865012,0.26822889 5.8918395,1.4007929 5.080823,2.3839145 4.9336815,3.8452096 5.3635544,5.101615 L 4.3670905,5.315913 C 4.0664984,5.3682645 4.0967703,5.6316724 4.2574957,5.8208829 L 4.9124,6.5655244 4.1543436,7.2512357 3.2136002,7.2163506 3.1674775,8.5586827 2.0406832,8.5086512 1.5965306,8.9299953 1.5471661,10.179833 0.75616674,10.195223 0.2112857,10.758575 0.15354288,11.735988 0.07199052,12.765553 c 0.36440953,0.238225 0.79006967,0.195492 1.44938278,-0.02675 L 6.3033562,8.1282037 6.8217102,8.6765688 C 6.9985465,8.8799427 7.3003699,8.7497574 7.358381,8.5016252 L 7.4938877,7.5084164 c 0.8537488,0.3985387 1.8303125,0.4711541 2.6851793,0.1427713 0.393927,-0.1407258 0.746858,-0.3701772 1.04755,-0.6595873 z'/>
+     <path d='M 6.8014948,6.3102123 0.15369063,13.024481 0.21560535,12.141962 6.0062342,6.2683782 z'
+        style='fill:#ffe5a5;fill-opacity:1;stroke:#854e31;stroke-width:0.06912433;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:3.00300009'/>
+    </g>
+  </symbol>
+  <symbol id='dist' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <path style='fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;' d='M 0.177,11.431 12.28,11.449'/>
+      <path style='fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;' d='m 6.124,3.954 0.066,7.154 v 0'/>
+      <rect width='11.78' height='3.40' x='0.40' y='0.44' style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;' ry='0.83'/>
+      <rect width='11.78' height='3.40' x='0.40' y='5.609' style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;' ry='0.832'/>
+    </g>
+  </symbol>
+  <symbol id='unq' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#fbea8e;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+      <text x='5.8' y='7.4' style='font-size:7px;fill:#8a8a8a;'>1</text>
+    </g>
+  </symbol>
+  <symbol id='idx' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#fbea8e;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+    </g>
+  </symbol>
+  <symbol id='fk' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#7e471f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+      d='M 12.48,0.33 7.07,0.89 9.067,2.974 0.329,11.731 1.073,12.597 9.811,3.841 11.77,5.78 z' />
+    </g>
+  </symbol>
+  <symbol id='ref' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#7e471f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.10,12.70 5.31,12.15 3.40,10.06 11.82,1.32 11.11,0.45 2.68,9.19 0.80,7.24 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag0' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag1' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#f4a393;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag2' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#77ec8b;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='nn' overflow='visible' >
+  <path style='stroke:#9b3e50;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0,0 3,3 M 0,3 3,0 z'/>
+  </symbol>
+  <symbol id='view' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <line x1='12' y1='6' x2='19' y2='0' stroke='black' stroke-width='0.5' />
+     <line x1='0' y1='6' x2='7' y2='0' stroke='black' stroke-width='0.5' />
+     <circle cx='3' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+     <circle cx='10' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+    </g>
+  </symbol>
+  <marker id='arrow01' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='arrow1' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='foot01' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 1.60,4.00 L 3.20,4.00 L 4.80,4.00 L 6.40,4.00 z' />
+  </marker>
+  <marker id='foot0p' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 1.60,4.00 L 3.20,4.00 L 4.80,4.00 L 6.40,4.00 z' />
+    <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
+  </marker>
+  <marker id='foot1' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='foot1p' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+    <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
+  </marker>
+  <linearGradient id='tbg_C7F4BE' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#E4F8E0' /> 
+     <stop offset='60%' stop-color='#C8EEC1' /> 
+     <stop offset='100%' stop-color='#E4F8E0' /> 
+  </linearGradient>
+  <linearGradient id='tbg_BED3F4' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#E0E9F8' /> 
+     <stop offset='60%' stop-color='#C1D2EE' /> 
+     <stop offset='100%' stop-color='#E0E9F8' /> 
+  </linearGradient>
+</defs>
+
+<!-- == Desktop == -->
+<rect x='1' y='1' width='1086' height='860' rx='8' ry='8' style='fill:url(#layoutBgB); stroke:#777777; stroke-width:0.5;' />
+<rect x='1' y='1' width='1086' height='860' rx='8' ry='8' style='fill:url(#layoutBgA); stroke:#777777; stroke-width:0.5;' />
+<rect x='1' y='1' width='1086' height='860' rx='8' ry='8' style='fill:url(#layoutBgTr);' />
+
+<!-- == Legend == -->
+<g transform='translate(10,10)'>
+  <rect x='10' y='10' width='330' height='56' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#shadow);'/> 
+  <text x='20' y='43'>quacker-sdb</text> 
+  <text x='20' y='57' style='fill:#aaaaaa; font-size:11px;'><tspan>Move the mouse over tables &amp; columns to read the comments.</tspan></text> 
+<a xlink:href='https://www.dbschema.com'> <path class='logo' d='m 32.309685,20.963194 c 0.411708,4.732616 -4.298055,7.925636 -8.723583,6.970196 -6.616967,1.8448 -2.656457,-6.434594 -3.911969,-10.01566 -2.15469,-5.89407 6.06247,-3.508505 9.167655,-2.863689 2.199228,1.054873 3.389343,3.582089 3.467897,5.909153 z m -3.720955,0.01451 c 0.434195,-4.414565 -7.644142,-5.37533 -5.137307,0.107342 -1.812268,5.992146 5.532698,4.379388 5.137307,-0.107342 z' /> <path class='logo' d='m 44.329732,23.050637 c 0.850982,5.097305 -5.250434,4.558924 -7.144836,4.752415 -6.418993,1.64391 -1.872992,-7.49274 -3.541914,-10.942842 -2.499646,-3.817859 5.939283,-4.402698 3.538545,-0.13612 -1.287874,4.989123 4.215411,-1.154796 5.956717,2.809584 0.840273,0.970849 1.168829,2.272413 1.191488,3.516963 z m -3.519477,-0.09299 c -1.398216,-5.518069 -6.361061,2.717467 -0.984368,1.810718 0.686994,-0.30388 1.029454,-1.087638 0.984368,-1.810718 z' /> <path class='logo' d='m 52.234961,23.301163 c 0.954818,5.035675 -8.606408,6.284861 -6.262292,1.674914 6.000358,-1.604717 -5.188764,-7.870044 1.75972,-10.384908 2.288682,-3.253567 6.399287,3.075831 2.304111,2.48058 -2.124941,2.016587 2.688777,3.89858 2.198472,6.229403 z' /> <path class='logo' d='m 60.204336,21.349224 c -4.894917,-1.916474 -3.458707,5.391212 0.347494,3.37231 2.120589,6.821713 -10.599623,1.664746 -6.906229,-3.691132 0.354172,-3.663246 9.875349,-4.711252 6.558735,0.318822 z' /> <path class='logo' d='m 71.730617,20.654299 c 0.0013,2.316285 0.190131,4.655698 0.07825,6.958009 -6.532419,3.303565 -0.660423,-8.722256 -6.009639,-5.821653 -0.818815,2.024533 1.726403,6.746337 -1.95327,6.005484 -3.458346,-1.137537 -0.696275,-7.713407 -1.833252,-10.994208 -2.308916,-3.710131 5.93704,-4.164951 3.518609,0.0063 -1.462376,6.166445 5.169629,-2.857523 6.19931,3.846079 z' /> <path class='logo' d='m 82.245738,22.378957 c -0.24581,2.448954 -9.386766,0.8867 -3.885979,2.877055 3.312576,-2.99157 5.250902,3.334514 0.482647,2.665545 -7.415384,1.492275 -7.823196,-11.597641 -0.275476,-10.032117 2.068161,0.391458 3.682204,2.408824 3.678808,4.489517 z m -3.414436,-0.578473 c -1.124703,-4.072004 -5.087405,2.125488 -0.316922,0.156453 z' /> <path class='logo' d='m 98.936899,27.222794 c -4.73541,2.718339 -3.1239,-3.406557 -3.92611,-6.050494 -4.66985,-1.438471 0.21621,6.932413 -3.41219,6.438039 -4.46096,1.160054 -0.22824,-5.774711 -3.31526,-6.700429 -3.410722,1.082173 1.04451,9.536575 -4.745091,6.372895 0.746632,-3.355214 -2.776394,-10.269232 3.034971,-9.038963 -0.058,2.544602 5.00686,-2.785359 6.00342,1.37844 3.42021,-4.316316 7.851251,0.524966 6.24018,4.690538 0.0379,0.969988 0.0954,1.940046 0.12008,2.909974 z' /> <path class='logo' d='m 110.47859,22.686058 c 0.91826,2.682088 0.13016,6.890551 -3.0725,4.397004 -1.63641,1.077877 -7.664291,0.541832 -7.09365,-4.114836 -0.907891,-4.692933 5.14729,-5.625578 7.24058,-4.40354 3.85932,-1.686263 3.13176,1.271515 2.92557,4.121372 z m -3.12695,0.0704 c -1.46278,-5.460062 -6.61615,2.5826 -1.08221,1.782003 0.70431,-0.272594 1.13111,-1.037444 1.08221,-1.782003 z' /> </a>
+</g>
+
+<g transform='translate(0,110)'>
+<!-- == Fk 'auth_permission_Fk_auth_permission' == -->
+<path id='auth_permission_Fk_auth_permission'  onmouseover="hghl(['auth_permission_Fk_auth_permission','Default.auth_permission.content_type_id','Default.django_content_type.id'])" onmouseout="uhghl(['auth_permission_Fk_auth_permission','Default.auth_permission.content_type_id','Default.django_content_type.id'])" transform='translate(8,0)' class='scene' d='M 752 176 L 752,192' >
+	<title>Fk Fk_auth_permission
+auth_permission ref django_content_type ( content_type_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 752 176 L 752,192' ></path>
+<text x='767' y='177' transform='rotate(90 767,177)' title='Fk Fk_auth_permission
+auth_permission ref django_content_type ( content_type_id -&gt; id )' class='relName' style='fill:#748EA7'>content_type_id</text>
+<!-- == Fk 'auth_group_permissions_Fk_auth_group_permissions' == -->
+<path id='auth_group_permissions_Fk_auth_group_permissions'  onmouseover="hghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group_permissions.group_id','Default.auth_group.id'])" onmouseout="uhghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group_permissions.group_id','Default.auth_group.id'])" transform='translate(8,0)' class='scene' d='M 512 96 L 448,96' >
+	<title>Fk Fk_auth_group_permissions
+auth_group_permissions ref auth_group ( group_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 512 96 L 448,96' ></path>
+<text x='476' y='91' transform='rotate(0 476,91)' title='Fk Fk_auth_group_permissions
+auth_group_permissions ref auth_group ( group_id -&gt; id )' class='relName' style='fill:#748EA7'>group_id</text>
+<!-- == Fk 'auth_group_permissions_Fk_auth_group_permissions' == -->
+<path id='auth_group_permissions_Fk_auth_group_permissions'  onmouseover="hghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group_permissions.permission_id','Default.auth_permission.id'])" onmouseout="uhghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group_permissions.permission_id','Default.auth_permission.id'])" transform='translate(8,0)' class='scene' d='M 672 64 L 720,64' >
+	<title>Fk Fk_auth_group_permissions
+auth_group_permissions ref auth_permission ( permission_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 672 64 L 720,64' ></path>
+<text x='681' y='59' transform='rotate(0 681,59)' title='Fk Fk_auth_group_permissions
+auth_group_permissions ref auth_permission ( permission_id -&gt; id )' class='relName' style='fill:#748EA7'>permission_id</text>
+<!-- == Fk 'application_quack_Fk_application_quack' == -->
+<path id='application_quack_Fk_application_quack'  onmouseover="hghl(['application_quack_Fk_application_quack','Default.application_quack.quacker_id','Default.auth_user.id'])" onmouseout="uhghl(['application_quack_Fk_application_quack','Default.application_quack.quacker_id','Default.auth_user.id'])" transform='translate(8,0)' class='scene' d='M 544 528 L 544,416' >
+	<title>Fk Fk_application_quack
+application_quack ref auth_user ( quacker_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 544 528 L 544,416' ></path>
+<text x='547' y='523' transform='rotate(270 547,523)' title='Fk Fk_application_quack
+application_quack ref auth_user ( quacker_id -&gt; id )' class='relName' style='fill:#748EA7'>quacker_id</text>
+<!-- == Fk 'auth_user_groups_Fk_auth_user_groups' == -->
+<path id='auth_user_groups_Fk_auth_user_groups'  onmouseover="hghl(['auth_user_groups_Fk_auth_user_groups','Default.auth_user_groups.group_id','Default.auth_group.id'])" onmouseout="uhghl(['auth_user_groups_Fk_auth_user_groups','Default.auth_user_groups.group_id','Default.auth_group.id'])" transform='translate(8,0)' class='scene' d='M 240 80 L 352,80' >
+	<title>Fk Fk_auth_user_groups
+auth_user_groups ref auth_group ( group_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 240 80 L 352,80' ></path>
+<text x='249' y='75' transform='rotate(0 249,75)' title='Fk Fk_auth_user_groups
+auth_user_groups ref auth_group ( group_id -&gt; id )' class='relName' style='fill:#748EA7'>group_id</text>
+<!-- == Fk 'auth_user_groups_Fk_auth_user_groups' == -->
+<path id='auth_user_groups_Fk_auth_user_groups'  onmouseover="hghl(['auth_user_groups_Fk_auth_user_groups','Default.auth_user_groups.user_id','Default.auth_user.id'])" onmouseout="uhghl(['auth_user_groups_Fk_auth_user_groups','Default.auth_user_groups.user_id','Default.auth_user.id'])" transform='translate(8,0)' class='scene' d='M 224 160 L 224,184 Q 224,192 232,192 L 448,192' >
+	<title>Fk Fk_auth_user_groups
+auth_user_groups ref auth_user ( user_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 224 160 L 224,184 Q 224,192 232,192 L 448,192' ></path>
+<text x='239' y='161' transform='rotate(90 239,161)' title='Fk Fk_auth_user_groups
+auth_user_groups ref auth_user ( user_id -&gt; id )' class='relName' style='fill:#748EA7'>user_id</text>
+<!-- == Fk 'application_follow_Fk_application_follow' == -->
+<path id='application_follow_Fk_application_follow'  onmouseover="hghl(['application_follow_Fk_application_follow','Default.application_follow.follower_id','Default.application_follow.followed_id','Default.auth_user.id','Default.auth_user.id'])" onmouseout="uhghl(['application_follow_Fk_application_follow','Default.application_follow.follower_id','Default.application_follow.followed_id','Default.auth_user.id','Default.auth_user.id'])" transform='translate(8,0)' class='scene' d='M 208 224 L 448,224' >
+	<title>Fk Fk_application_follow
+application_follow ref auth_user ( follower_id -&gt; id, followed_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 208 224 L 448,224' ></path>
+<text x='217' y='219' transform='rotate(0 217,219)' title='Fk Fk_application_follow
+application_follow ref auth_user ( follower_id -&gt; id, followed_id -&gt; id )' class='relName' style='fill:#748EA7'>follower_id,followed_id</text>
+<!-- == Fk 'application_profile_Fk_application_profile' == -->
+<path id='application_profile_Fk_application_profile'  onmouseover="hghl(['application_profile_Fk_application_profile','Default.application_profile.user_id','Default.auth_user.id'])" onmouseout="uhghl(['application_profile_Fk_application_profile','Default.application_profile.user_id','Default.auth_user.id'])" transform='translate(8,0)' class='scene' d='M 160 352 L 448,352' >
+	<title>Fk Fk_application_profile
+application_profile ref auth_user ( user_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 160 352 L 448,352' ></path>
+<text x='169' y='347' transform='rotate(0 169,347)' title='Fk Fk_application_profile
+application_profile ref auth_user ( user_id -&gt; id )' class='relName' style='fill:#748EA7'>user_id</text>
+<!-- == Fk 'application_optionalmention_Fk_application_optionalmention' == -->
+<path id='application_optionalmention_Fk_application_optionalmention'  onmouseover="hghl(['application_optionalmention_Fk_application_optionalmention','Default.application_optionalmention.quack_id','Default.application_quack.id'])" onmouseout="uhghl(['application_optionalmention_Fk_application_optionalmention','Default.application_optionalmention.quack_id','Default.application_quack.id'])" transform='translate(8,0)' class='scene' d='M 416 544 L 512,544' >
+	<title>Fk Fk_application_optionalmention
+application_optionalmention ref application_quack ( quack_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 416 544 L 512,544' ></path>
+<text x='425' y='539' transform='rotate(0 425,539)' title='Fk Fk_application_optionalmention
+application_optionalmention ref application_quack ( quack_id -&gt; id )' class='relName' style='fill:#748EA7'>quack_id</text>
+<!-- == Fk 'application_optionalmention_Fk_application_optionalmention' == -->
+<path id='application_optionalmention_Fk_application_optionalmention'  onmouseover="hghl(['application_optionalmention_Fk_application_optionalmention','Default.application_optionalmention.mention_id','Default.auth_user.id'])" onmouseout="uhghl(['application_optionalmention_Fk_application_optionalmention','Default.application_optionalmention.mention_id','Default.auth_user.id'])" transform='translate(8,0)' class='scene' d='M 400 464 L 400,392 Q 400,384 408,384 L 448,384' >
+	<title>Fk Fk_application_optionalmention
+application_optionalmention ref auth_user ( mention_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 400 464 L 400,392 Q 400,384 408,384 L 448,384' ></path>
+<text x='403' y='459' transform='rotate(270 403,459)' title='Fk Fk_application_optionalmention
+application_optionalmention ref auth_user ( mention_id -&gt; id )' class='relName' style='fill:#748EA7'>mention_id</text>
+<!-- == Fk 'django_admin_log_Fk_django_admin_log' == -->
+<path id='django_admin_log_Fk_django_admin_log'  onmouseover="hghl(['django_admin_log_Fk_django_admin_log','Default.django_admin_log.user_id','Default.auth_user.id'])" onmouseout="uhghl(['django_admin_log_Fk_django_admin_log','Default.django_admin_log.user_id','Default.auth_user.id'])" transform='translate(8,0)' class='scene' d='M 688 384 L 576,384' >
+	<title>Fk Fk_django_admin_log
+django_admin_log ref auth_user ( user_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 688 384 L 576,384' ></path>
+<text x='660' y='379' transform='rotate(0 660,379)' title='Fk Fk_django_admin_log
+django_admin_log ref auth_user ( user_id -&gt; id )' class='relName' style='fill:#748EA7'>user_id</text>
+<!-- == Fk 'django_admin_log_Fk_django_admin_log' == -->
+<path id='django_admin_log_Fk_django_admin_log'  onmouseover="hghl(['django_admin_log_Fk_django_admin_log','Default.django_admin_log.content_type_id','Default.django_content_type.id'])" onmouseout="uhghl(['django_admin_log_Fk_django_admin_log','Default.django_admin_log.content_type_id','Default.django_content_type.id'])" transform='translate(8,0)' class='scene' d='M 736 368 L 736,304' >
+	<title>Fk Fk_django_admin_log
+django_admin_log ref django_content_type ( content_type_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 736 368 L 736,304' ></path>
+<text x='739' y='363' transform='rotate(270 739,363)' title='Fk Fk_django_admin_log
+django_admin_log ref django_content_type ( content_type_id -&gt; id )' class='relName' style='fill:#748EA7'>content_type_id</text>
+<!-- == Fk 'auth_user_user_permissions_Fk_auth_user_user_permissions' == -->
+<path id='auth_user_user_permissions_Fk_auth_user_user_permissions'  onmouseover="hghl(['auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user_user_permissions.permission_id','Default.auth_permission.id'])" onmouseout="uhghl(['auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user_user_permissions.permission_id','Default.auth_permission.id'])" transform='translate(8,0)' class='scene' d='M 240 672 L 872,672 Q 880,672 880,664 L 880,168 Q 880,160 872,160 L 864,160' >
+	<title>Fk Fk_auth_user_user_permissions
+auth_user_user_permissions ref auth_permission ( permission_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 240 672 L 872,672 Q 880,672 880,664 L 880,168 Q 880,160 872,160 L 864,160' ></path>
+<text x='249' y='667' transform='rotate(0 249,667)' title='Fk Fk_auth_user_user_permissions
+auth_user_user_permissions ref auth_permission ( permission_id -&gt; id )' class='relName' style='fill:#748EA7'>permission_id</text>
+<!-- == Fk 'auth_user_user_permissions_Fk_auth_user_user_permissions' == -->
+<path id='auth_user_user_permissions_Fk_auth_user_user_permissions'  onmouseover="hghl(['auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user_user_permissions.user_id','Default.auth_user.id'])" onmouseout="uhghl(['auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user_user_permissions.user_id','Default.auth_user.id'])" transform='translate(8,0)' class='scene' d='M 224 592 L 224,376 Q 224,368 232,368 L 448,368' >
+	<title>Fk Fk_auth_user_user_permissions
+auth_user_user_permissions ref auth_user ( user_id -&gt; id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 224 592 L 224,376 Q 224,368 232,368 L 448,368' ></path>
+<text x='227' y='587' transform='rotate(270 227,587)' title='Fk Fk_auth_user_user_permissions
+auth_user_user_permissions ref auth_user ( user_id -&gt; id )' class='relName' style='fill:#748EA7'>user_id</text>
+<!-- == Table 'django_content_type' == -->
+<rect class='entity' x='720' y='200' width='128' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 720 228 L 720 208 Q 720 200 728 200 L 840 200 Q 848 200 848 208 L 848 228 L720 228 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='720' y='200' width='128' height='96' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#django_content_type'><text x='725' y='220'>django_content_type</text><title>Table Default.django_content_type</title></a>
+  <use id='nn' x='722' y='237' xlink:href='#nn'/><a xlink:href='#django_content_type.id'><use id='pk' x='722' y='236' xlink:href='#pk'/><title>Pk pk_django_content_type ( id ) </title></a>
+<a xlink:href='#django_content_type.id'><text id='Default.django_content_type.id' x='739' y='247' onmouseover="hghl(['auth_permission_Fk_auth_permission','Default.auth_permission.content_type_id','django_admin_log_Fk_django_admin_log','Default.django_admin_log.content_type_id'])" onmouseout="uhghl(['auth_permission_Fk_auth_permission','Default.auth_permission.content_type_id','django_admin_log_Fk_django_admin_log','Default.django_admin_log.content_type_id'])">id</text><title>id
+* integer</title></a>
+<a xlink:href='#django_content_type.id'><use id='ref' x='836' y='236' xlink:href='#ref'/><title>Referred by auth_permission ( content_type_id -&gt; id ) 
+Referred by django_admin_log ( content_type_id -&gt; id ) </title></a>
+  <use id='nn' x='722' y='253' xlink:href='#nn'/><a xlink:href='#django_content_type.app_label'><use id='unq' x='722' y='252' xlink:href='#unq'/><title>Unq django_content_type_app_label_model_76bd3d3b_uniq ( app_label, model ) </title></a>
+<a xlink:href='#django_content_type.app_label'><text id='Default.django_content_type.app_label' x='739' y='263'>app_label</text><title>app_label
+* varchar(100)</title></a>
+<text x='845' y='260' text-anchor='end' class='colType'>t</text>  <use id='nn' x='722' y='269' xlink:href='#nn'/><a xlink:href='#django_content_type.model'><use id='unq' x='722' y='268' xlink:href='#unq'/><title>Unq django_content_type_app_label_model_76bd3d3b_uniq ( app_label, model ) </title></a>
+<a xlink:href='#django_content_type.model'><text id='Default.django_content_type.model' x='739' y='279'>model</text><title>model
+* varchar(100)</title></a>
+<text x='845' y='276' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'auth_user' == -->
+<rect class='entity' x='464' y='184' width='112' height='224' rx='8' ry='8' style='stroke:none'/>
+<path d='M 464 212 L 464 192 Q 464 184 472 184 L 568 184 Q 576 184 576 192 L 576 212 L464 212 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='464' y='184' width='112' height='224' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#auth_user'><text x='490' y='204'>auth_user</text><title>Table Default.auth_user</title></a>
+  <use id='nn' x='466' y='221' xlink:href='#nn'/><a xlink:href='#auth_user.id'><use id='pk' x='466' y='220' xlink:href='#pk'/><title>Pk pk_auth_user ( id ) </title></a>
+<a xlink:href='#auth_user.id'><text id='Default.auth_user.id' x='483' y='231' onmouseover="hghl(['application_follow_Fk_application_follow','Default.application_follow.follower_id','Default.application_follow.followed_id','application_optionalmention_Fk_application_optionalmention','Default.application_optionalmention.mention_id','application_profile_Fk_application_profile','Default.application_profile.user_id','application_quack_Fk_application_quack','Default.application_quack.quacker_id','auth_user_groups_Fk_auth_user_groups','Default.auth_user_groups.user_id','auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user_user_permissions.user_id','django_admin_log_Fk_django_admin_log','Default.django_admin_log.user_id'])" onmouseout="uhghl(['application_follow_Fk_application_follow','Default.application_follow.follower_id','Default.application_follow.followed_id','application_optionalmention_Fk_application_optionalmention','Default.application_optionalmention.mention_id','application_profile_Fk_application_profile','Default.application_profile.user_id','application_quack_Fk_application_quack','Default.application_quack.quacker_id','auth_user_groups_Fk_auth_user_groups','Default.auth_user_groups.user_id','auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user_user_permissions.user_id','django_admin_log_Fk_django_admin_log','Default.django_admin_log.user_id'])">id</text><title>id
+* integer</title></a>
+<a xlink:href='#auth_user.id'><use id='ref' x='564' y='220' xlink:href='#ref'/><title>Referred by application_follow ( follower_id -&gt; id, followed_id -&gt; id ) 
+Referred by application_optionalmention ( mention_id -&gt; id ) 
+Referred by application_profile ( user_id -&gt; id ) 
+Referred by application_quack ( quacker_id -&gt; id ) 
+Referred by auth_user_groups ( user_id -&gt; id ) 
+Referred by auth_user_user_permissions ( user_id -&gt; id ) 
+Referred by django_admin_log ( user_id -&gt; id ) </title></a>
+  <use id='nn' x='466' y='237' xlink:href='#nn'/><a xlink:href='#auth_user.password'><text id='Default.auth_user.password' x='483' y='247'>password</text><title>password
+* varchar(128)</title></a>
+<text x='573' y='244' text-anchor='end' class='colType'>t</text>  <a xlink:href='#auth_user.last_login'><text id='Default.auth_user.last_login' x='483' y='263'>last_login</text><title>last_login
+datetime</title></a>
+<text x='573' y='260' text-anchor='end' class='colType'>d</text>  <use id='nn' x='466' y='269' xlink:href='#nn'/><a xlink:href='#auth_user.is_superuser'><text id='Default.auth_user.is_superuser' x='483' y='279'>is_superuser</text><title>is_superuser
+* boolean</title></a>
+<text x='573' y='276' text-anchor='end' class='colType'>b</text>  <use id='nn' x='466' y='285' xlink:href='#nn'/><a xlink:href='#auth_user.username'><use id='unq' x='466' y='284' xlink:href='#unq'/><title>Unq sqlite_autoindex_auth_user_1 ( username ) </title></a>
+<a xlink:href='#auth_user.username'><text id='Default.auth_user.username' x='483' y='295'>username</text><title>username
+* varchar(150)</title></a>
+<text x='573' y='292' text-anchor='end' class='colType'>t</text>  <use id='nn' x='466' y='301' xlink:href='#nn'/><a xlink:href='#auth_user.first_name'><text id='Default.auth_user.first_name' x='483' y='311'>first_name</text><title>first_name
+* varchar(30)</title></a>
+<text x='573' y='308' text-anchor='end' class='colType'>t</text>  <use id='nn' x='466' y='317' xlink:href='#nn'/><a xlink:href='#auth_user.email'><text id='Default.auth_user.email' x='483' y='327'>email</text><title>email
+* varchar(254)</title></a>
+<text x='573' y='324' text-anchor='end' class='colType'>t</text>  <use id='nn' x='466' y='333' xlink:href='#nn'/><a xlink:href='#auth_user.is_staff'><text id='Default.auth_user.is_staff' x='483' y='343'>is_staff</text><title>is_staff
+* boolean</title></a>
+<text x='573' y='340' text-anchor='end' class='colType'>b</text>  <use id='nn' x='466' y='349' xlink:href='#nn'/><a xlink:href='#auth_user.is_active'><text id='Default.auth_user.is_active' x='483' y='359'>is_active</text><title>is_active
+* boolean</title></a>
+<text x='573' y='356' text-anchor='end' class='colType'>b</text>  <use id='nn' x='466' y='365' xlink:href='#nn'/><a xlink:href='#auth_user.date_joined'><text id='Default.auth_user.date_joined' x='483' y='375'>date_joined</text><title>date_joined
+* datetime</title></a>
+<text x='573' y='372' text-anchor='end' class='colType'>d</text>  <use id='nn' x='466' y='381' xlink:href='#nn'/><a xlink:href='#auth_user.last_name'><text id='Default.auth_user.last_name' x='483' y='391'>last_name</text><title>last_name
+* varchar(150)</title></a>
+<text x='573' y='388' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'auth_permission' == -->
+<rect class='entity' x='736' y='56' width='128' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 736 84 L 736 64 Q 736 56 744 56 L 856 56 Q 864 56 864 64 L 864 84 L736 84 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='736' y='56' width='128' height='112' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#auth_permission'><text x='754' y='76'>auth_permission</text><title>Table Default.auth_permission</title></a>
+  <use id='nn' x='738' y='93' xlink:href='#nn'/><a xlink:href='#auth_permission.id'><use id='pk' x='738' y='92' xlink:href='#pk'/><title>Pk pk_auth_permission ( id ) </title></a>
+<a xlink:href='#auth_permission.id'><text id='Default.auth_permission.id' x='755' y='103' onmouseover="hghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group_permissions.permission_id','auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user_user_permissions.permission_id'])" onmouseout="uhghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group_permissions.permission_id','auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user_user_permissions.permission_id'])">id</text><title>id
+* integer</title></a>
+<a xlink:href='#auth_permission.id'><use id='ref' x='852' y='92' xlink:href='#ref'/><title>Referred by auth_group_permissions ( permission_id -&gt; id ) 
+Referred by auth_user_user_permissions ( permission_id -&gt; id ) </title></a>
+  <use id='nn' x='738' y='109' xlink:href='#nn'/><a xlink:href='#auth_permission.content_type_id'><use id='unq' x='738' y='108' xlink:href='#unq'/><title>auth_permission_content_type_id_2f476e4b ( content_type_id ) Unq auth_permission_content_type_id_codename_01ab375a_uniq ( content_type_id, codename ) </title></a>
+<a xlink:href='#auth_permission.content_type_id'><text id='Default.auth_permission.content_type_id' x='755' y='119' onmouseover="hghl(['auth_permission_Fk_auth_permission','Default.django_content_type.id'])" onmouseout="uhghl(['auth_permission_Fk_auth_permission','Default.django_content_type.id'])">content_type_id</text><title>content_type_id
+* integer</title></a>
+<a xlink:href='#auth_permission.content_type_id'><use id='fk' x='852' y='108' xlink:href='#fk'/><title>References django_content_type ( content_type_id -&gt; id ) </title></a>
+  <use id='nn' x='738' y='125' xlink:href='#nn'/><a xlink:href='#auth_permission.codename'><use id='unq' x='738' y='124' xlink:href='#unq'/><title>Unq auth_permission_content_type_id_codename_01ab375a_uniq ( content_type_id, codename ) </title></a>
+<a xlink:href='#auth_permission.codename'><text id='Default.auth_permission.codename' x='755' y='135'>codename</text><title>codename
+* varchar(100)</title></a>
+<text x='861' y='132' text-anchor='end' class='colType'>t</text>  <use id='nn' x='738' y='141' xlink:href='#nn'/><a xlink:href='#auth_permission.name'><text id='Default.auth_permission.name' x='755' y='151'>name</text><title>name
+* varchar(255)</title></a>
+<text x='861' y='148' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'auth_group_permissions' == -->
+<rect class='entity' x='528' y='40' width='144' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 528 68 L 528 48 Q 528 40 536 40 L 664 40 Q 672 40 672 48 L 672 68 L528 68 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='528' y='40' width='144' height='96' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#auth_group_permissions'><text x='533' y='60'>auth_group_permissions</text><title>Table Default.auth_group_permissions</title></a>
+  <use id='nn' x='530' y='77' xlink:href='#nn'/><a xlink:href='#auth_group_permissions.id'><use id='pk' x='530' y='76' xlink:href='#pk'/><title>Pk pk_auth_group_permissions ( id ) </title></a>
+<a xlink:href='#auth_group_permissions.id'><text id='Default.auth_group_permissions.id' x='547' y='87'>id</text><title>id
+* integer</title></a>
+<text x='669' y='84' text-anchor='end' class='colType'>#</text>  <use id='nn' x='530' y='93' xlink:href='#nn'/><a xlink:href='#auth_group_permissions.group_id'><use id='unq' x='530' y='92' xlink:href='#unq'/><title>auth_group_permissions_group_id_b120cbf9 ( group_id ) Unq auth_group_permissions_group_id_permission_id_0cd325b0_uniq ( group_id, permission_id ) </title></a>
+<a xlink:href='#auth_group_permissions.group_id'><text id='Default.auth_group_permissions.group_id' x='547' y='103' onmouseover="hghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group.id'])" onmouseout="uhghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group.id'])">group_id</text><title>group_id
+* integer</title></a>
+<a xlink:href='#auth_group_permissions.group_id'><use id='fk' x='660' y='92' xlink:href='#fk'/><title>References auth_group ( group_id -&gt; id ) </title></a>
+  <use id='nn' x='530' y='109' xlink:href='#nn'/><a xlink:href='#auth_group_permissions.permission_id'><use id='unq' x='530' y='108' xlink:href='#unq'/><title>auth_group_permissions_permission_id_84c5c92e ( permission_id ) Unq auth_group_permissions_group_id_permission_id_0cd325b0_uniq ( group_id, permission_id ) </title></a>
+<a xlink:href='#auth_group_permissions.permission_id'><text id='Default.auth_group_permissions.permission_id' x='547' y='119' onmouseover="hghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_permission.id'])" onmouseout="uhghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_permission.id'])">permission_id</text><title>permission_id
+* integer</title></a>
+<a xlink:href='#auth_group_permissions.permission_id'><use id='fk' x='660' y='108' xlink:href='#fk'/><title>References auth_permission ( permission_id -&gt; id ) </title></a>
+
+<!-- == Table 'application_quack' == -->
+<rect class='entity' x='528' y='536' width='112' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 528 564 L 528 544 Q 528 536 536 536 L 632 536 Q 640 536 640 544 L 640 564 L528 564 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='528' y='536' width='112' height='112' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#application_quack'><text x='534' y='556'>application_quack</text><title>Table Default.application_quack</title></a>
+  <use id='nn' x='530' y='573' xlink:href='#nn'/><a xlink:href='#application_quack.id'><use id='pk' x='530' y='572' xlink:href='#pk'/><title>Pk pk_application_quack ( id ) </title></a>
+<a xlink:href='#application_quack.id'><text id='Default.application_quack.id' x='547' y='583' onmouseover="hghl(['application_optionalmention_Fk_application_optionalmention','Default.application_optionalmention.quack_id'])" onmouseout="uhghl(['application_optionalmention_Fk_application_optionalmention','Default.application_optionalmention.quack_id'])">id</text><title>id
+* integer</title></a>
+<a xlink:href='#application_quack.id'><use id='ref' x='628' y='572' xlink:href='#ref'/><title>Referred by application_optionalmention ( quack_id -&gt; id ) </title></a>
+  <use id='nn' x='530' y='589' xlink:href='#nn'/><a xlink:href='#application_quack.content'><text id='Default.application_quack.content' x='547' y='599'>content</text><title>content
+* varchar(250)</title></a>
+<text x='637' y='596' text-anchor='end' class='colType'>t</text>  <use id='nn' x='530' y='605' xlink:href='#nn'/><a xlink:href='#application_quack.created_at'><text id='Default.application_quack.created_at' x='547' y='615'>created_at</text><title>created_at
+* datetime</title></a>
+<text x='637' y='612' text-anchor='end' class='colType'>d</text>  <use id='nn' x='530' y='621' xlink:href='#nn'/><a xlink:href='#application_quack.quacker_id'><use id='idx' x='530' y='620' xlink:href='#idx'/><title>application_quack_quacker_id_470602fd ( quacker_id ) </title></a>
+<a xlink:href='#application_quack.quacker_id'><text id='Default.application_quack.quacker_id' x='547' y='631' onmouseover="hghl(['application_quack_Fk_application_quack','Default.auth_user.id'])" onmouseout="uhghl(['application_quack_Fk_application_quack','Default.auth_user.id'])">quacker_id</text><title>quacker_id
+* integer</title></a>
+<a xlink:href='#application_quack.quacker_id'><use id='fk' x='628' y='620' xlink:href='#fk'/><title>References auth_user ( quacker_id -&gt; id ) </title></a>
+
+<!-- == Table 'auth_user_groups' == -->
+<rect class='entity' x='128' y='56' width='112' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 128 84 L 128 64 Q 128 56 136 56 L 232 56 Q 240 56 240 64 L 240 84 L128 84 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='128' y='56' width='112' height='96' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#auth_user_groups'><text x='134' y='76'>auth_user_groups</text><title>Table Default.auth_user_groups</title></a>
+  <use id='nn' x='130' y='93' xlink:href='#nn'/><a xlink:href='#auth_user_groups.id'><use id='pk' x='130' y='92' xlink:href='#pk'/><title>Pk pk_auth_user_groups ( id ) </title></a>
+<a xlink:href='#auth_user_groups.id'><text id='Default.auth_user_groups.id' x='147' y='103'>id</text><title>id
+* integer</title></a>
+<text x='237' y='100' text-anchor='end' class='colType'>#</text>  <use id='nn' x='130' y='109' xlink:href='#nn'/><a xlink:href='#auth_user_groups.user_id'><use id='unq' x='130' y='108' xlink:href='#unq'/><title>auth_user_groups_user_id_6a12ed8b ( user_id ) Unq auth_user_groups_user_id_group_id_94350c0c_uniq ( user_id, group_id ) </title></a>
+<a xlink:href='#auth_user_groups.user_id'><text id='Default.auth_user_groups.user_id' x='147' y='119' onmouseover="hghl(['auth_user_groups_Fk_auth_user_groups','Default.auth_user.id'])" onmouseout="uhghl(['auth_user_groups_Fk_auth_user_groups','Default.auth_user.id'])">user_id</text><title>user_id
+* integer</title></a>
+<a xlink:href='#auth_user_groups.user_id'><use id='fk' x='228' y='108' xlink:href='#fk'/><title>References auth_user ( user_id -&gt; id ) </title></a>
+  <use id='nn' x='130' y='125' xlink:href='#nn'/><a xlink:href='#auth_user_groups.group_id'><use id='unq' x='130' y='124' xlink:href='#unq'/><title>auth_user_groups_group_id_97559544 ( group_id ) Unq auth_user_groups_user_id_group_id_94350c0c_uniq ( user_id, group_id ) </title></a>
+<a xlink:href='#auth_user_groups.group_id'><text id='Default.auth_user_groups.group_id' x='147' y='135' onmouseover="hghl(['auth_user_groups_Fk_auth_user_groups','Default.auth_group.id'])" onmouseout="uhghl(['auth_user_groups_Fk_auth_user_groups','Default.auth_group.id'])">group_id</text><title>group_id
+* integer</title></a>
+<a xlink:href='#auth_user_groups.group_id'><use id='fk' x='228' y='124' xlink:href='#fk'/><title>References auth_group ( group_id -&gt; id ) </title></a>
+
+<!-- == Table 'auth_group' == -->
+<rect class='entity' x='368' y='72' width='80' height='80' rx='8' ry='8' style='stroke:none'/>
+<path d='M 368 100 L 368 80 Q 368 72 376 72 L 440 72 Q 448 72 448 80 L 448 100 L368 100 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='368' y='72' width='80' height='80' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#auth_group'><text x='374' y='92'>auth_group</text><title>Table Default.auth_group</title></a>
+  <use id='nn' x='370' y='109' xlink:href='#nn'/><a xlink:href='#auth_group.id'><use id='pk' x='370' y='108' xlink:href='#pk'/><title>Pk pk_auth_group ( id ) </title></a>
+<a xlink:href='#auth_group.id'><text id='Default.auth_group.id' x='387' y='119' onmouseover="hghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group_permissions.group_id','auth_user_groups_Fk_auth_user_groups','Default.auth_user_groups.group_id'])" onmouseout="uhghl(['auth_group_permissions_Fk_auth_group_permissions','Default.auth_group_permissions.group_id','auth_user_groups_Fk_auth_user_groups','Default.auth_user_groups.group_id'])">id</text><title>id
+* integer</title></a>
+<a xlink:href='#auth_group.id'><use id='ref' x='436' y='108' xlink:href='#ref'/><title>Referred by auth_group_permissions ( group_id -&gt; id ) 
+Referred by auth_user_groups ( group_id -&gt; id ) </title></a>
+  <use id='nn' x='370' y='125' xlink:href='#nn'/><a xlink:href='#auth_group.name'><use id='unq' x='370' y='124' xlink:href='#unq'/><title>Unq sqlite_autoindex_auth_group_1 ( name ) </title></a>
+<a xlink:href='#auth_group.name'><text id='Default.auth_group.name' x='387' y='135'>name</text><title>name
+* varchar(80)</title></a>
+<text x='445' y='132' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'application_follow' == -->
+<rect class='entity' x='96' y='200' width='112' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 96 228 L 96 208 Q 96 200 104 200 L 200 200 Q 208 200 208 208 L 208 228 L96 228 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='96' y='200' width='112' height='96' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#application_follow'><text x='101' y='220'>application_follow</text><title>Table Default.application_follow</title></a>
+  <use id='nn' x='98' y='237' xlink:href='#nn'/><a xlink:href='#application_follow.id'><use id='pk' x='98' y='236' xlink:href='#pk'/><title>Pk pk_application_follow ( id ) </title></a>
+<a xlink:href='#application_follow.id'><text id='Default.application_follow.id' x='115' y='247'>id</text><title>id
+* integer</title></a>
+<text x='205' y='244' text-anchor='end' class='colType'>#</text>  <use id='nn' x='98' y='253' xlink:href='#nn'/><a xlink:href='#application_follow.followed_id'><use id='idx' x='98' y='252' xlink:href='#idx'/><title>application_follow_followed_id_8d990eb8 ( followed_id ) </title></a>
+<a xlink:href='#application_follow.followed_id'><text id='Default.application_follow.followed_id' x='115' y='263' onmouseover="hghl(['application_follow_Fk_application_follow','Default.auth_user.id','Default.auth_user.id'])" onmouseout="uhghl(['application_follow_Fk_application_follow','Default.auth_user.id','Default.auth_user.id'])">followed_id</text><title>followed_id
+* integer</title></a>
+<a xlink:href='#application_follow.followed_id'><use id='fk' x='196' y='252' xlink:href='#fk'/><title>References auth_user ( follower_id -&gt; id, followed_id -&gt; id ) </title></a>
+  <use id='nn' x='98' y='269' xlink:href='#nn'/><a xlink:href='#application_follow.follower_id'><use id='idx' x='98' y='268' xlink:href='#idx'/><title>application_follow_follower_id_3bec0026 ( follower_id ) </title></a>
+<a xlink:href='#application_follow.follower_id'><text id='Default.application_follow.follower_id' x='115' y='279' onmouseover="hghl(['application_follow_Fk_application_follow','Default.auth_user.id','Default.auth_user.id'])" onmouseout="uhghl(['application_follow_Fk_application_follow','Default.auth_user.id','Default.auth_user.id'])">follower_id</text><title>follower_id
+* integer</title></a>
+<a xlink:href='#application_follow.follower_id'><use id='fk' x='196' y='268' xlink:href='#fk'/><title>References auth_user ( follower_id -&gt; id, followed_id -&gt; id ) </title></a>
+
+<!-- == Table 'application_profile' == -->
+<rect class='entity' x='48' y='328' width='112' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 48 356 L 48 336 Q 48 328 56 328 L 152 328 Q 160 328 160 336 L 160 356 L48 356 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='48' y='328' width='112' height='112' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#application_profile'><text x='52' y='348'>application_profile</text><title>Table Default.application_profile</title></a>
+  <use id='nn' x='50' y='365' xlink:href='#nn'/><a xlink:href='#application_profile.id'><use id='pk' x='50' y='364' xlink:href='#pk'/><title>Pk pk_application_profile ( id ) </title></a>
+<a xlink:href='#application_profile.id'><text id='Default.application_profile.id' x='67' y='375'>id</text><title>id
+* integer</title></a>
+<text x='157' y='372' text-anchor='end' class='colType'>#</text>  <a xlink:href='#application_profile.description'><text id='Default.application_profile.description' x='67' y='391'>description</text><title>description
+varchar(1000)</title></a>
+<text x='157' y='388' text-anchor='end' class='colType'>t</text>  <use id='nn' x='50' y='397' xlink:href='#nn'/><a xlink:href='#application_profile.user_id'><use id='unq' x='50' y='396' xlink:href='#unq'/><title>Unq sqlite_autoindex_application_profile_1 ( user_id ) </title></a>
+<a xlink:href='#application_profile.user_id'><text id='Default.application_profile.user_id' x='67' y='407' onmouseover="hghl(['application_profile_Fk_application_profile','Default.auth_user.id'])" onmouseout="uhghl(['application_profile_Fk_application_profile','Default.auth_user.id'])">user_id</text><title>user_id
+* integer</title></a>
+<a xlink:href='#application_profile.user_id'><use id='fk' x='148' y='396' xlink:href='#fk'/><title>References auth_user ( user_id -&gt; id ) </title></a>
+  <a xlink:href='#application_profile.image_link'><text id='Default.application_profile.image_link' x='67' y='423'>image_link</text><title>image_link
+varchar(100)</title></a>
+<text x='157' y='420' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'application_optionalmention' == -->
+<rect class='entity' x='256' y='472' width='160' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 256 500 L 256 480 Q 256 472 264 472 L 408 472 Q 416 472 416 480 L 416 500 L256 500 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='256' y='472' width='160' height='96' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#application_optionalmention'><text x='259' y='492'>application_optionalmention</text><title>Table Default.application_optionalmention</title></a>
+  <use id='nn' x='258' y='509' xlink:href='#nn'/><a xlink:href='#application_optionalmention.id'><use id='pk' x='258' y='508' xlink:href='#pk'/><title>Pk pk_application_optionalmention ( id ) </title></a>
+<a xlink:href='#application_optionalmention.id'><text id='Default.application_optionalmention.id' x='275' y='519'>id</text><title>id
+* integer</title></a>
+<text x='413' y='516' text-anchor='end' class='colType'>#</text>  <use id='nn' x='258' y='525' xlink:href='#nn'/><a xlink:href='#application_optionalmention.mention_id'><use id='idx' x='258' y='524' xlink:href='#idx'/><title>application_optionalmention_mention_id_74c87e7b ( mention_id ) </title></a>
+<a xlink:href='#application_optionalmention.mention_id'><text id='Default.application_optionalmention.mention_id' x='275' y='535' onmouseover="hghl(['application_optionalmention_Fk_application_optionalmention','Default.auth_user.id'])" onmouseout="uhghl(['application_optionalmention_Fk_application_optionalmention','Default.auth_user.id'])">mention_id</text><title>mention_id
+* integer</title></a>
+<a xlink:href='#application_optionalmention.mention_id'><use id='fk' x='404' y='524' xlink:href='#fk'/><title>References auth_user ( mention_id -&gt; id ) </title></a>
+  <use id='nn' x='258' y='541' xlink:href='#nn'/><a xlink:href='#application_optionalmention.quack_id'><use id='idx' x='258' y='540' xlink:href='#idx'/><title>application_optionalmention_quack_id_38e65ca0 ( quack_id ) </title></a>
+<a xlink:href='#application_optionalmention.quack_id'><text id='Default.application_optionalmention.quack_id' x='275' y='551' onmouseover="hghl(['application_optionalmention_Fk_application_optionalmention','Default.application_quack.id'])" onmouseout="uhghl(['application_optionalmention_Fk_application_optionalmention','Default.application_quack.id'])">quack_id</text><title>quack_id
+* integer</title></a>
+<a xlink:href='#application_optionalmention.quack_id'><use id='fk' x='404' y='540' xlink:href='#fk'/><title>References application_quack ( quack_id -&gt; id ) </title></a>
+
+<!-- == Table 'django_admin_log' == -->
+<rect class='entity' x='704' y='376' width='128' height='176' rx='8' ry='8' style='stroke:none'/>
+<path d='M 704 404 L 704 384 Q 704 376 712 376 L 824 376 Q 832 376 832 384 L 832 404 L704 404 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='704' y='376' width='128' height='176' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#django_admin_log'><text x='717' y='396'>django_admin_log</text><title>Table Default.django_admin_log</title></a>
+  <use id='nn' x='706' y='413' xlink:href='#nn'/><a xlink:href='#django_admin_log.id'><use id='pk' x='706' y='412' xlink:href='#pk'/><title>Pk pk_django_admin_log ( id ) </title></a>
+<a xlink:href='#django_admin_log.id'><text id='Default.django_admin_log.id' x='723' y='423'>id</text><title>id
+* integer</title></a>
+<text x='829' y='420' text-anchor='end' class='colType'>#</text>  <a xlink:href='#django_admin_log.object_id'><text id='Default.django_admin_log.object_id' x='723' y='439'>object_id</text><title>object_id
+text</title></a>
+<text x='829' y='436' text-anchor='end' class='colType'>t</text>  <use id='nn' x='706' y='445' xlink:href='#nn'/><a xlink:href='#django_admin_log.object_repr'><text id='Default.django_admin_log.object_repr' x='723' y='455'>object_repr</text><title>object_repr
+* varchar(200)</title></a>
+<text x='829' y='452' text-anchor='end' class='colType'>t</text>  <use id='nn' x='706' y='461' xlink:href='#nn'/><a xlink:href='#django_admin_log.action_flag'><text id='Default.django_admin_log.action_flag' x='723' y='471'>action_flag</text><title>action_flag
+* smallint unsigned</title></a>
+<text x='829' y='468' text-anchor='end' class='colType'>#</text>  <use id='nn' x='706' y='477' xlink:href='#nn'/><a xlink:href='#django_admin_log.change_message'><text id='Default.django_admin_log.change_message' x='723' y='487'>change_message</text><title>change_message
+* text</title></a>
+<text x='829' y='484' text-anchor='end' class='colType'>t</text>  <a xlink:href='#django_admin_log.content_type_id'><use id='idx' x='706' y='492' xlink:href='#idx'/><title>django_admin_log_content_type_id_c4bce8eb ( content_type_id ) </title></a>
+<a xlink:href='#django_admin_log.content_type_id'><text id='Default.django_admin_log.content_type_id' x='723' y='503' onmouseover="hghl(['django_admin_log_Fk_django_admin_log','Default.django_content_type.id'])" onmouseout="uhghl(['django_admin_log_Fk_django_admin_log','Default.django_content_type.id'])">content_type_id</text><title>content_type_id
+integer</title></a>
+<a xlink:href='#django_admin_log.content_type_id'><use id='fk' x='820' y='492' xlink:href='#fk'/><title>References django_content_type ( content_type_id -&gt; id ) </title></a>
+  <use id='nn' x='706' y='509' xlink:href='#nn'/><a xlink:href='#django_admin_log.user_id'><use id='idx' x='706' y='508' xlink:href='#idx'/><title>django_admin_log_user_id_c564eba6 ( user_id ) </title></a>
+<a xlink:href='#django_admin_log.user_id'><text id='Default.django_admin_log.user_id' x='723' y='519' onmouseover="hghl(['django_admin_log_Fk_django_admin_log','Default.auth_user.id'])" onmouseout="uhghl(['django_admin_log_Fk_django_admin_log','Default.auth_user.id'])">user_id</text><title>user_id
+* integer</title></a>
+<a xlink:href='#django_admin_log.user_id'><use id='fk' x='820' y='508' xlink:href='#fk'/><title>References auth_user ( user_id -&gt; id ) </title></a>
+  <use id='nn' x='706' y='525' xlink:href='#nn'/><a xlink:href='#django_admin_log.action_time'><text id='Default.django_admin_log.action_time' x='723' y='535'>action_time</text><title>action_time
+* datetime</title></a>
+<text x='829' y='532' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'auth_user_user_permissions' == -->
+<rect class='entity' x='80' y='600' width='160' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 80 628 L 80 608 Q 80 600 88 600 L 232 600 Q 240 600 240 608 L 240 628 L80 628 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='80' y='600' width='160' height='96' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#auth_user_user_permissions'><text x='83' y='620'>auth_user_user_permissions</text><title>Table Default.auth_user_user_permissions</title></a>
+  <use id='nn' x='82' y='637' xlink:href='#nn'/><a xlink:href='#auth_user_user_permissions.id'><use id='pk' x='82' y='636' xlink:href='#pk'/><title>Pk pk_auth_user_user_permissions ( id ) </title></a>
+<a xlink:href='#auth_user_user_permissions.id'><text id='Default.auth_user_user_permissions.id' x='99' y='647'>id</text><title>id
+* integer</title></a>
+<text x='237' y='644' text-anchor='end' class='colType'>#</text>  <use id='nn' x='82' y='653' xlink:href='#nn'/><a xlink:href='#auth_user_user_permissions.user_id'><use id='unq' x='82' y='652' xlink:href='#unq'/><title>auth_user_user_permissions_user_id_a95ead1b ( user_id ) Unq auth_user_user_permissions_user_id_permission_id_14a6b632_uniq ( user_id, permission_id ) </title></a>
+<a xlink:href='#auth_user_user_permissions.user_id'><text id='Default.auth_user_user_permissions.user_id' x='99' y='663' onmouseover="hghl(['auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user.id'])" onmouseout="uhghl(['auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_user.id'])">user_id</text><title>user_id
+* integer</title></a>
+<a xlink:href='#auth_user_user_permissions.user_id'><use id='fk' x='228' y='652' xlink:href='#fk'/><title>References auth_user ( user_id -&gt; id ) </title></a>
+  <use id='nn' x='82' y='669' xlink:href='#nn'/><a xlink:href='#auth_user_user_permissions.permission_id'><use id='unq' x='82' y='668' xlink:href='#unq'/><title>auth_user_user_permissions_permission_id_1fbb5f2c ( permission_id ) Unq auth_user_user_permissions_user_id_permission_id_14a6b632_uniq ( user_id, permission_id ) </title></a>
+<a xlink:href='#auth_user_user_permissions.permission_id'><text id='Default.auth_user_user_permissions.permission_id' x='99' y='679' onmouseover="hghl(['auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_permission.id'])" onmouseout="uhghl(['auth_user_user_permissions_Fk_auth_user_user_permissions','Default.auth_permission.id'])">permission_id</text><title>permission_id
+* integer</title></a>
+<a xlink:href='#auth_user_user_permissions.permission_id'><use id='fk' x='228' y='668' xlink:href='#fk'/><title>References auth_permission ( permission_id -&gt; id ) </title></a>
+
+<!-- == Table 'django_migrations' == -->
+<rect class='entity' x='928' y='88' width='112' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 928 116 L 928 96 Q 928 88 936 88 L 1032 88 Q 1040 88 1040 96 L 1040 116 L928 116 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='928' y='88' width='112' height='112' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#django_migrations'><text x='932' y='108'>django_migrations</text><title>Table Default.django_migrations</title></a>
+  <use id='nn' x='930' y='125' xlink:href='#nn'/><a xlink:href='#django_migrations.id'><use id='pk' x='930' y='124' xlink:href='#pk'/><title>Pk pk_django_migrations ( id ) </title></a>
+<a xlink:href='#django_migrations.id'><text id='Default.django_migrations.id' x='947' y='135'>id</text><title>id
+* integer</title></a>
+<text x='1037' y='132' text-anchor='end' class='colType'>#</text>  <use id='nn' x='930' y='141' xlink:href='#nn'/><a xlink:href='#django_migrations.app'><text id='Default.django_migrations.app' x='947' y='151'>app</text><title>app
+* varchar(255)</title></a>
+<text x='1037' y='148' text-anchor='end' class='colType'>t</text>  <use id='nn' x='930' y='157' xlink:href='#nn'/><a xlink:href='#django_migrations.name'><text id='Default.django_migrations.name' x='947' y='167'>name</text><title>name
+* varchar(255)</title></a>
+<text x='1037' y='164' text-anchor='end' class='colType'>t</text>  <use id='nn' x='930' y='173' xlink:href='#nn'/><a xlink:href='#django_migrations.applied'><text id='Default.django_migrations.applied' x='947' y='183'>applied</text><title>applied
+* datetime</title></a>
+<text x='1037' y='180' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'django_session' == -->
+<rect class='entity' x='928' y='216' width='112' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 928 244 L 928 224 Q 928 216 936 216 L 1032 216 Q 1040 216 1040 224 L 1040 244 L928 244 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='928' y='216' width='112' height='96' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#django_session'><text x='941' y='236'>django_session</text><title>Table Default.django_session</title></a>
+  <use id='nn' x='930' y='253' xlink:href='#nn'/><a xlink:href='#django_session.session_key'><use id='pk' x='930' y='252' xlink:href='#pk'/><title>Pk pk_django_session ( session_key ) </title></a>
+<a xlink:href='#django_session.session_key'><text id='Default.django_session.session_key' x='947' y='263'>session_key</text><title>session_key
+* varchar(40)</title></a>
+<text x='1037' y='260' text-anchor='end' class='colType'>t</text>  <use id='nn' x='930' y='269' xlink:href='#nn'/><a xlink:href='#django_session.session_data'><text id='Default.django_session.session_data' x='947' y='279'>session_data</text><title>session_data
+* text</title></a>
+<text x='1037' y='276' text-anchor='end' class='colType'>t</text>  <use id='nn' x='930' y='285' xlink:href='#nn'/><a xlink:href='#django_session.expire_date'><use id='idx' x='930' y='284' xlink:href='#idx'/><title>django_session_expire_date_a5c62663 ( expire_date ) </title></a>
+<a xlink:href='#django_session.expire_date'><text id='Default.django_session.expire_date' x='947' y='295'>expire_date</text><title>expire_date
+* datetime</title></a>
+<text x='1037' y='292' text-anchor='end' class='colType'>d</text>
+</g></svg></div>
+
+
+<br><br>
+<div class='card'><div class='card-body'><a name='application_follow' onclick='window.scrollTo(60, 208);return false;' style='cursor:pointer;'><h4 class='card-title'>Table application_follow</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='application_follow.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='application_follow.followed_id'>followed&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='application_follow.follower_id'>follower&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;application&#95;follow</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>application&#95;follow&#95;follower&#95;id&#95;3bec0026</td>
+		<td> ON follower&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>application&#95;follow&#95;followed&#95;id&#95;8d990eb8</td>
+		<td> ON followed&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_application_follow</td>
+		<td > ( follower&#95;id&#44; followed&#95;id ) ref <a href='#auth&#95;user'>auth&#95;user</a> (id&#44; id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='application_optionalmention' onclick='window.scrollTo(60, 480);return false;' style='cursor:pointer;'><h4 class='card-title'>Table application_optionalmention</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='application_optionalmention.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='application_optionalmention.mention_id'>mention&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='application_optionalmention.quack_id'>quack&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;application&#95;optionalmention</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>application&#95;optionalmention&#95;quack&#95;id&#95;38e65ca0</td>
+		<td> ON quack&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>application&#95;optionalmention&#95;mention&#95;id&#95;74c87e7b</td>
+		<td> ON mention&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_application_optionalmention</td>
+		<td > ( quack&#95;id ) ref <a href='#application&#95;quack'>application&#95;quack</a> (id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_application_optionalmention</td>
+		<td > ( mention&#95;id ) ref <a href='#auth&#95;user'>auth&#95;user</a> (id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='application_profile' onclick='window.scrollTo(60, 336);return false;' style='cursor:pointer;'><h4 class='card-title'>Table application_profile</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='application_profile.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='application_profile.description'>description</a></td>
+		<td> varchar&#40; 1000 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='application_profile.user_id'>user&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='application_profile.image_link'>image&#95;link</a></td>
+		<td> varchar&#40; 100 &#41;   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;application&#95;profile</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>sqlite&#95;autoindex&#95;application&#95;profile&#95;1</td>
+		<td> ON user&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_application_profile</td>
+		<td > ( user&#95;id ) ref <a href='#auth&#95;user'>auth&#95;user</a> (id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='application_quack' onclick='window.scrollTo(328, 544);return false;' style='cursor:pointer;'><h4 class='card-title'>Table application_quack</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='application_quack.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='application_quack.content'>content</a></td>
+		<td> varchar&#40; 250 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='application_quack.created_at'>created&#95;at</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='application_quack.quacker_id'>quacker&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;application&#95;quack</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>application&#95;quack&#95;quacker&#95;id&#95;470602fd</td>
+		<td> ON quacker&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_application_quack</td>
+		<td > ( quacker&#95;id ) ref <a href='#auth&#95;user'>auth&#95;user</a> (id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='auth_group' onclick='window.scrollTo(168, 80);return false;' style='cursor:pointer;'><h4 class='card-title'>Table auth_group</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='auth_group.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg></td>
+		<td><a name='auth_group.name'>name</a></td>
+		<td> varchar&#40; 80 &#41;   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;auth&#95;group</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>sqlite&#95;autoindex&#95;auth&#95;group&#95;1</td>
+		<td> ON name</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='auth_group_permissions' onclick='window.scrollTo(328, 48);return false;' style='cursor:pointer;'><h4 class='card-title'>Table auth_group_permissions</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='auth_group_permissions.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='auth_group_permissions.group_id'>group&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='auth_group_permissions.permission_id'>permission&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;auth&#95;group&#95;permissions</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>auth&#95;group&#95;permissions&#95;permission&#95;id&#95;84c5c92e</td>
+		<td> ON permission&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>auth&#95;group&#95;permissions&#95;group&#95;id&#95;b120cbf9</td>
+		<td> ON group&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>auth&#95;group&#95;permissions&#95;group&#95;id&#95;permission&#95;id&#95;0cd325b0&#95;uniq</td>
+		<td> ON group&#95;id&#44; permission&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_auth_group_permissions</td>
+		<td > ( group&#95;id ) ref <a href='#auth&#95;group'>auth&#95;group</a> (id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_auth_group_permissions</td>
+		<td > ( permission&#95;id ) ref <a href='#auth&#95;permission'>auth&#95;permission</a> (id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='auth_permission' onclick='window.scrollTo(536, 64);return false;' style='cursor:pointer;'><h4 class='card-title'>Table auth_permission</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='auth_permission.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='auth_permission.content_type_id'>content&#95;type&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg></td>
+		<td><a name='auth_permission.codename'>codename</a></td>
+		<td> varchar&#40; 100 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_permission.name'>name</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;auth&#95;permission</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>auth&#95;permission&#95;content&#95;type&#95;id&#95;2f476e4b</td>
+		<td> ON content&#95;type&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>auth&#95;permission&#95;content&#95;type&#95;id&#95;codename&#95;01ab375a&#95;uniq</td>
+		<td> ON content&#95;type&#95;id&#44; codename</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_auth_permission</td>
+		<td > ( content&#95;type&#95;id ) ref <a href='#django&#95;content&#95;type'>django&#95;content&#95;type</a> (id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='auth_user' onclick='window.scrollTo(264, 192);return false;' style='cursor:pointer;'><h4 class='card-title'>Table auth_user</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='auth_user.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_user.password'>password</a></td>
+		<td> varchar&#40; 128 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='auth_user.last_login'>last&#95;login</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_user.is_superuser'>is&#95;superuser</a></td>
+		<td> boolean   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg></td>
+		<td><a name='auth_user.username'>username</a></td>
+		<td> varchar&#40; 150 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_user.first_name'>first&#95;name</a></td>
+		<td> varchar&#40; 30 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_user.email'>email</a></td>
+		<td> varchar&#40; 254 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_user.is_staff'>is&#95;staff</a></td>
+		<td> boolean   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_user.is_active'>is&#95;active</a></td>
+		<td> boolean   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_user.date_joined'>date&#95;joined</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='auth_user.last_name'>last&#95;name</a></td>
+		<td> varchar&#40; 150 &#41;   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;auth&#95;user</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>sqlite&#95;autoindex&#95;auth&#95;user&#95;1</td>
+		<td> ON username</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='auth_user_groups' onclick='window.scrollTo(60, 64);return false;' style='cursor:pointer;'><h4 class='card-title'>Table auth_user_groups</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='auth_user_groups.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='auth_user_groups.user_id'>user&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='auth_user_groups.group_id'>group&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;auth&#95;user&#95;groups</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>auth&#95;user&#95;groups&#95;group&#95;id&#95;97559544</td>
+		<td> ON group&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>auth&#95;user&#95;groups&#95;user&#95;id&#95;6a12ed8b</td>
+		<td> ON user&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>auth&#95;user&#95;groups&#95;user&#95;id&#95;group&#95;id&#95;94350c0c&#95;uniq</td>
+		<td> ON user&#95;id&#44; group&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_auth_user_groups</td>
+		<td > ( group&#95;id ) ref <a href='#auth&#95;group'>auth&#95;group</a> (id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_auth_user_groups</td>
+		<td > ( user&#95;id ) ref <a href='#auth&#95;user'>auth&#95;user</a> (id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='auth_user_user_permissions' onclick='window.scrollTo(60, 608);return false;' style='cursor:pointer;'><h4 class='card-title'>Table auth_user_user_permissions</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='auth_user_user_permissions.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='auth_user_user_permissions.user_id'>user&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='auth_user_user_permissions.permission_id'>permission&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;auth&#95;user&#95;user&#95;permissions</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>auth&#95;user&#95;user&#95;permissions&#95;permission&#95;id&#95;1fbb5f2c</td>
+		<td> ON permission&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>auth&#95;user&#95;user&#95;permissions&#95;user&#95;id&#95;a95ead1b</td>
+		<td> ON user&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>auth&#95;user&#95;user&#95;permissions&#95;user&#95;id&#95;permission&#95;id&#95;14a6b632&#95;uniq</td>
+		<td> ON user&#95;id&#44; permission&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_auth_user_user_permissions</td>
+		<td > ( permission&#95;id ) ref <a href='#auth&#95;permission'>auth&#95;permission</a> (id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_auth_user_user_permissions</td>
+		<td > ( user&#95;id ) ref <a href='#auth&#95;user'>auth&#95;user</a> (id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='django_admin_log' onclick='window.scrollTo(504, 384);return false;' style='cursor:pointer;'><h4 class='card-title'>Table django_admin_log</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='django_admin_log.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='django_admin_log.object_id'>object&#95;id</a></td>
+		<td> text   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='django_admin_log.object_repr'>object&#95;repr</a></td>
+		<td> varchar&#40; 200 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='django_admin_log.action_flag'>action&#95;flag</a></td>
+		<td> smallint unsigned   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='django_admin_log.change_message'>change&#95;message</a></td>
+		<td> text   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='django_admin_log.content_type_id'>content&#95;type&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='django_admin_log.user_id'>user&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='django_admin_log.action_time'>action&#95;time</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;django&#95;admin&#95;log</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>django&#95;admin&#95;log&#95;user&#95;id&#95;c564eba6</td>
+		<td> ON user&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>django&#95;admin&#95;log&#95;content&#95;type&#95;id&#95;c4bce8eb</td>
+		<td> ON content&#95;type&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_django_admin_log</td>
+		<td > ( user&#95;id ) ref <a href='#auth&#95;user'>auth&#95;user</a> (id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>Fk_django_admin_log</td>
+		<td > ( content&#95;type&#95;id ) ref <a href='#django&#95;content&#95;type'>django&#95;content&#95;type</a> (id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='django_content_type' onclick='window.scrollTo(520, 208);return false;' style='cursor:pointer;'><h4 class='card-title'>Table django_content_type</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='django_content_type.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg></td>
+		<td><a name='django_content_type.app_label'>app&#95;label</a></td>
+		<td> varchar&#40; 100 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg></td>
+		<td><a name='django_content_type.model'>model</a></td>
+		<td> varchar&#40; 100 &#41;   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;django&#95;content&#95;type</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>django&#95;content&#95;type&#95;app&#95;label&#95;model&#95;76bd3d3b&#95;uniq</td>
+		<td> ON app&#95;label&#44; model</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='django_migrations' onclick='window.scrollTo(728, 96);return false;' style='cursor:pointer;'><h4 class='card-title'>Table django_migrations</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='django_migrations.id'>id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='django_migrations.app'>app</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='django_migrations.name'>name</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='django_migrations.applied'>applied</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;django&#95;migrations</td>
+		<td> ON id</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='django_session' onclick='window.scrollTo(728, 224);return false;' style='cursor:pointer;'><h4 class='card-title'>Table django_session</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='django_session.session_key'>session&#95;key</a></td>
+		<td> varchar&#40; 40 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='django_session.session_data'>session&#95;data</a></td>
+		<td> text   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='django_session.expire_date'>expire&#95;date</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;django&#95;session</td>
+		<td> ON session&#95;key</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>django&#95;session&#95;expire&#95;date&#95;a5c62663</td>
+		<td> ON expire&#95;date</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<p align='right'><a href='https://www.dbschema.com' style='color:#aaa'>Powered by DbSchema</a></p></body></html>
